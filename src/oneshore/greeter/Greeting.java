@@ -50,7 +50,7 @@ public class Greeting {
 				message.append(modifier + " ");
 			}	
 		}
-			
+		
 		message.append(WordUtils.capitalize(greeting.name));
 
 		message.append(punctuation);

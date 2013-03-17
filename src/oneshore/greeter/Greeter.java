@@ -95,9 +95,12 @@ public class Greeter {
 					greeting.modifiers.add(dictionary.epithet);
 				}
 			} 
-			else if (person.name == null | person.name.equals("")) {
+			else if (person.name == null) {
 				greeting.name = dictionary.individual;
 			} 
+			else if (person.name.equals("")) {
+				greeting.name = dictionary.individual;
+			}
 			else {
 				greeting.name = person.name;
 			}	
