@@ -31,9 +31,9 @@ public class Dictionaries {
 		individual = "amigo";
 	}};
 	
-	public static HashMap<Locales,Dictionary> dictionary =  new HashMap<Locales, Dictionary>() {{
-		put(Locales.US, dictionary_US);
-		put(Locales.AU, dictionary_AU);
-		put(Locales.ES, dictionary_ES);
+	public static HashMap<Locale,Dictionary> dictionary =  new HashMap<Locale, Dictionary>() {{
+		put(Locale.US, dictionary_US);
+		put(Locale.AU, dictionary_AU);
+		put(Locale.ES, dictionary_ES);
 	}};
 }

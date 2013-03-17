@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Localizer {
 
-	Locales locale;
-	Locales default_locale = Locales.US;
-	Locales[] supported_locales = { Locales.US, Locales.AU, Locales.ES };
+	Locale locale;
+	Locale default_locale = Locale.US;
+	Locale[] supported_locales = { Locale.US, Locale.AU, Locale.ES };
 	
 	
 	///////////////////////////////////
@@ -24,7 +24,7 @@ public class Localizer {
 	 * 
 	 * @param locale
 	 */
-	public Localizer(Locales locale) {		
+	public Localizer(Locale locale) {		
 		if (! isSupported(locale)) {
 			locale = default_locale;
 		}
@@ -35,7 +35,7 @@ public class Localizer {
 	 * @param locale
 	 */
 	public Localizer(String localeName) {
-		Locales locale = Locales.valueOf(localeName);
+		Locale locale = Locale.valueOf(localeName);
 		
 		if (! isSupported(locale)) {
 			locale = default_locale;
@@ -57,7 +57,7 @@ public class Localizer {
 		return getDictionary(locale);
 	}
 	
-	public Dictionary getDictionary(Locales locale) throws Exception {
+	public Dictionary getDictionary(Locale locale) throws Exception {
 		if (! isSupported(locale)) {
 			throw new Exception("Locale is not supported: " + locale);
 		}
@@ -78,7 +78,7 @@ public class Localizer {
 	 * @param locales
 	 * @return
 	 */
-	public boolean isSupported(Locales locales) {
+	public boolean isSupported(Locale locales) {
 		return Arrays.asList(supported_locales).contains(locales);
 	}
 }
