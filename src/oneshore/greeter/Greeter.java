@@ -14,7 +14,9 @@ public class Greeter {
 	/**
 	 * 
 	 */
-	public Greeter() {}
+	public Greeter() {
+		setLocale(default_locale);
+	}
 	
 	/**
 	 * 
@@ -59,6 +61,16 @@ public class Greeter {
 		
 		return greet(person, locale);
 	}
+
+	/**
+	 * 
+	 * @param person
+	 * @param locale
+	 * @return
+	 */
+	public Greeting greet(Person person, String locale) {
+		return greet(person, Locale.valueOf(locale));
+	}
 	
 	/**
 	 * 
@@ -69,7 +81,7 @@ public class Greeter {
 	public Greeting greet(Person person, Locale locale) {
 		return greet(person, locale, false);
 	}
-	
+		
 	/**
 	 * 
 	 * @param person
@@ -138,11 +150,9 @@ public class Greeter {
 
 	/**
 	 * 
-	 * @param person
 	 * @param locale
-	 * @return
 	 */
-	public Greeting greet(Person person, String locale) {
-		return greet(person, Locale.valueOf(locale));
+	public void setLocale(String localeName) {		
+		setLocale(Locale.valueOf(localeName));
 	}
 }
