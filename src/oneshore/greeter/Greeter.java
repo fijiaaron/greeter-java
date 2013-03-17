@@ -30,12 +30,9 @@ public class Greeter {
 	 * 
 	 * @param locale
 	 */
-	public Greeter(String localeName) {	
-		Locale locale = Locale.valueOf(localeName);
+	public Greeter(String locale) {		
 		setLocale(locale);
 	}
-	
-	
 	
 	///////////////////////////////////
 	// Actions
