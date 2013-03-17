@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class GreetingTests {
   @Test
   public void testGreetingByName() {
-	  Locale locale = Locale.US;
+	  Locales locale = Locales.US;
 	  Greeter greeter = new Greeter(locale);
 	  Person person = new Person("John Smith");
 	  Greeting greeting = greeter.greet(person);  
@@ -17,7 +17,7 @@ public class GreetingTests {
   
   @Test
   public void testGreetingGroup() {
-	  Locale locale = Locale.US;
+	  Locales locale = Locales.US;
 	  Greeter greeter = new Greeter(locale);
 	  Greeting greeting = greeter.greet();  
 	 
@@ -27,7 +27,7 @@ public class GreetingTests {
   
   @Test
   public void testGreetingAustralia() {
-	  Locale locale = Locale.AU;
+	  Locales locale = Locales.AU;
 	  Greeter greeter = new Greeter(locale);
 	  Greeting greeting = greeter.greet(new Person());  
 	 

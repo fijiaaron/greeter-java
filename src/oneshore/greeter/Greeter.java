@@ -2,8 +2,8 @@ package oneshore.greeter;
 
 public class Greeter {
 
-	Locale locale;
-	Locale default_locale = Locale.US;
+	Locales locale;
+	Locales default_locale = Locales.US;
 	
 	
 	
@@ -20,7 +20,16 @@ public class Greeter {
 	 * 
 	 * @param locale
 	 */
-	public Greeter(Locale locale) {		
+	public Greeter(Locales locale) {		
+		setLocale(locale);
+	}
+	
+	/**
+	 * 
+	 * @param locale
+	 */
+	public Greeter(String localeName) {	
+		Locales locale = Locales.valueOf(localeName);
 		setLocale(locale);
 	}
 	
@@ -57,7 +66,7 @@ public class Greeter {
 	 * @param locale
 	 * @return
 	 */
-	public Greeting greet(Person person, Locale locale) {
+	public Greeting greet(Person person, Locales locale) {
 		return greet(person, locale, false);
 	}
 	
@@ -68,7 +77,7 @@ public class Greeter {
 	 * @param isSame
 	 * @return
 	 */
-	public Greeting greet(Person person, Locale locale, boolean isSame) {
+	public Greeting greet(Person person, Locales locale, boolean isSame) {
 		Greeting greeting = new Greeting();
 
 		try {
@@ -123,7 +132,7 @@ public class Greeter {
 	 * 
 	 * @param locale
 	 */
-	public void setLocale(Locale locale) {		
+	public void setLocale(Locales locale) {		
 		this.locale = locale;
 	}
 }

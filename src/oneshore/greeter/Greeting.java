@@ -1,5 +1,6 @@
 package oneshore.greeter;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -28,11 +29,11 @@ public class Greeting {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<String> getModifiers() {
-		return modifiers;
+	public String[] getModifiers() {
+		return modifiers.toArray(new String[modifiers.size()]);
 	}
-	public void setModifiers(List<String> modifiers) {
-		this.modifiers = modifiers;
+	public void setModifiers(String[] modifiers) {
+		this.modifiers = Arrays.asList(modifiers);
 	}
 	
 	///////////////////////////////////
