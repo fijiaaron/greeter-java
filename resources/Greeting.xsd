@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="dictionary">
+    <xs:sequence>
+      <xs:element name="salutation" type="xs:string" minOccurs="0"/>
+      <xs:element name="morning_salutation" type="xs:string" minOccurs="0"/>
+      <xs:element name="farewell" type="xs:string" minOccurs="0"/>
+      <xs:element name="epithet" type="xs:string" minOccurs="0"/>
+      <xs:element name="group" type="xs:string" minOccurs="0"/>
+      <xs:element name="individual" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="helpers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dictionaries">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="greeter">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="greeting">
+    <xs:sequence>
+      <xs:element name="modifiers" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="salutation" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="localizer">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:simpleType name="locale">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="US"/>
+      <xs:enumeration value="AU"/>
+      <xs:enumeration value="ES"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
