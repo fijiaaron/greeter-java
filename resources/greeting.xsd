@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="greeting" type="greetingType"/>
+  <xs:complexType name="nameType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="first"/>
+      <xs:element type="xs:string" name="middle"/>
+      <xs:element type="xs:string" name="last"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subjectType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="title"/>
+      <xs:element type="nameType" name="name"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="messageType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="salutation"/>
+      <xs:element name="modifier" maxOccurs="unbounded" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="cruel"/>
+            <xs:enumeration value="dark"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="subjectType" name="subject"/>
+      <xs:element type="xs:string" name="punctuation"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="locale"/>
+  </xs:complexType>
+  <xs:complexType name="greetingType">
+    <xs:sequence>
+      <xs:element type="messageType" name="message"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greeting>
+    <message locale="en-US">
+        <salutation>Goodbye</salutation>
+        <modifier>cruel</modifier>
+        <modifier>dark</modifier>
+        <subject>
+            <title>Mr.</title>
+            <name>
+				<first>John</first>
+				<middle>Q.</middle>
+				<last>Smith</last>
+			</name>
+        </subject>
+        <punctuation>!</punctuation>
+    </message>
+</greeting>
